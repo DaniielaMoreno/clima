@@ -5,9 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Doggy weather app</title>
     <link rel="stylesheet" href="src/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,300,0,0&icon_names=device_thermostat,humidity_mid,air,readiness_score"
+    />
   </head>
   <body>
     <div class="app-container">
+      <p>Friday, 23:37</p>
       <header>
         <form class="search-form">
           <input
@@ -18,39 +29,46 @@
           />
           <input type="submit" value="Search" class="search-button" />
         </form>
-        <p>Friday, 23:37</p>
       </header>
       <main>
-        <div class="card city">
-          <h4>Berlin ☀️</h4>
-
-          <h1>16°C</h1>
-          <span> rainy</span>
-
-          <div class="grid-details">
-            <div>
-              <p>🌡️ Feels like</p>
-              <p id="feels-like">20°C</p>
-            </div>
-            <div>
-              <p>💧 Humidity</p>
-              <p id="humidity">60%</p>
-            </div>
-            <div>
-              <p>💨 Wind</p>
-              <p id="wind">3 km/h</p>
-            </div>
-            <div>
-              <p>🧭Pressure</p>
-              <p id="pressure">1013 hPa</p>
+        <div class="card">
+          <div class="city">
+            <h4>Berlin ☀️</h4>
+            <h1>16°C</h1>
+            <span class="weather-description">rainy</span>
+            <div class="grid-details">
+              <div>
+                <span class="material-symbols-outlined">
+                  device_thermostat
+                </span>
+                <p>Feels like</p>
+                <p id="feels-like">20°C</p>
+              </div>
+              <div>
+                <span class="material-symbols-outlined">humidity_mid</span>
+                <p>Humidity</p>
+                <p id="humidity">60%</p>
+              </div>
+              <div>
+                <span class="material-symbols-outlined"> air </span>
+                <p>Wind</p>
+                <p id="wind">3 km/h</p>
+              </div>
+              <div>
+                <span class="material-symbols-outlined"> readiness_score </span>
+                <p>Pressure</p>
+                <p id="pressure">1013 hPa</p>
+              </div>
             </div>
           </div>
         </div>
-        <div class="card dogs">
-          <img
-            src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/173/360/original/Lluvia.gif?1757195205"
-            alt="illustration of a dog enjoying the rain from the window"
-          />
+        <div class="card">
+          <div class="dogs">
+            <img
+              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/174/347/original/Lluvia.gif?1759348555"
+              alt="illustration of a dog enjoying the rain from the window"
+            />
+          </div>
         </div>
       </main>
 
