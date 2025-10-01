@@ -4,61 +4,68 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Doggy weather app</title>
+    <link rel="stylesheet" href="src/style.css" />
   </head>
   <body>
-    <header>
-      <form action="">
-        <input type="search" placeholder="Enter a city..." required />
-        <input type="submit" value="Search" />
-      </form>
-      <p>Friday, 23:37</p>
-    </header>
-    <main>
-      <div class="card-city">
-        <h4>Berlin ☀️</h4>
-      </div>
-      <div>
-        <h1>16°C</h1>
-        <span> rainy</span>
-      </div>
-      <div class="grid-details">
-        <div>
-          <p>🌡️ Feels like</p>
-          <p id="feels-like">20°C</p>
-        </div>
-        <div>
-          <p>💧 Humidity</p>
-          <p id="humidity">60%</p>
-        </div>
-        <div>
-          <p>💨 Wind</p>
-          <p id="wind">3 km/h</p>
-        </div>
-        <div>
-          <p>🧭Pressure</p>
-          <p id="pressure">1013 hPa</p>
-        </div>
-      </div>
-      <div class="card-dog">
-        <img
-          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/173/360/original/Lluvia.gif?1757195205"
-          alt="illustration of a dog enjoying the rain from the window"
-          style="max-width: 250px"
-        />
-      </div>
-    </main>
+    <div class="app-container">
+      <header>
+        <form class="search-form">
+          <input
+            type="search"
+            placeholder="Enter a city..."
+            required
+            class="search-input"
+          />
+          <input type="submit" value="Search" class="search-button" />
+        </form>
+        <p>Friday, 23:37</p>
+      </header>
+      <main>
+        <div class="card city">
+          <h4>Berlin ☀️</h4>
 
-    <footer>
-      Coded by
-      <a href="https://github.com/DaniielaMoreno" target="_blank"
-        >Daniela Moreno</a
-      >
-      <br />
-      This project is open sourced on
-      <a href="https://github.com/DaniielaMoreno/clima" target="_blank"
-        >GitHub</a
-      >
-      and hosted on <a href="https://doggyweather.netlify.app">Netlify</a>.
-    </footer>
+          <h1>16°C</h1>
+          <span> rainy</span>
+
+          <div class="grid-details">
+            <div>
+              <p>🌡️ Feels like</p>
+              <p id="feels-like">20°C</p>
+            </div>
+            <div>
+              <p>💧 Humidity</p>
+              <p id="humidity">60%</p>
+            </div>
+            <div>
+              <p>💨 Wind</p>
+              <p id="wind">3 km/h</p>
+            </div>
+            <div>
+              <p>🧭Pressure</p>
+              <p id="pressure">1013 hPa</p>
+            </div>
+          </div>
+        </div>
+        <div class="card dogs">
+          <img
+            src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/173/360/original/Lluvia.gif?1757195205"
+            alt="illustration of a dog enjoying the rain from the window"
+          />
+        </div>
+      </main>
+
+      <footer>
+        Coded by
+        <a href="https://github.com/DaniielaMoreno" target="_blank"
+          >Daniela Moreno</a
+        >
+        <br />
+        This project is open sourced on
+        <a href="https://github.com/DaniielaMoreno/clima" target="_blank"
+          >GitHub</a
+        >
+        and hosted on <a href="https://doggyweather.netlify.app">Netlify</a>.
+      </footer>
+    </div>
   </body>
 </html>
