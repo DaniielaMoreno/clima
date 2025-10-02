@@ -3,31 +3,71 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
-header {
-  font-family: inherit;
-  display: flexbox;
+.app-container {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 20px 50px;
+  font-family: Arial, sans-serif;
   background-color: #bbdce5;
-  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 4px 11px 10px 2px rgba(0, 0, 0, 0.1);
+}
+
+header {
+  font-family: "Montserrat", sans-serif;
+  background-color: #bbdce5;
+  padding: 20px 0 30px 0;
+  text-align: left;
+}
+
+h6 {
   text-align: center;
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+  color: #5e342754;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+
+form {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0em;
 }
 
 .search-input {
-  background-color: #fafaf8;
+  font-family: "Montserrat", sans-serif;
+  background-color: #e7e7e5a9;
+
+  color: #595959;
   border: none;
   border-radius: 6px;
-  width: 80%;
-  font-size: 16px;
+  width: 83%;
+  font-size: 14px;
   padding: 10px 20px;
+  box-shadow: 5px 8px 18px 0px rgba(0, 0, 0, 0.1);
+}
+
+.search-input:focus {
+  outline-style: solid;
+  outline-color: #f0898783;
+}
+
+.search-input::placeholder {
+  color: #59595985;
 }
 
 .search-button {
-  background-color: #647fbc;
+  font-family: "Montserrat", sans-serif;
+  background-color: #f08887;
   border: none;
   border-radius: 6px;
-  font-size: 16px;
+  font-size: 14px;
   padding: 10px 20px;
   cursor: pointer;
   color: white;
+  box-shadow: 5px 8px 18px 0px rgba(0, 0, 0, 0.1);
 }
 
 main {
@@ -39,38 +79,58 @@ main {
   grid-gap: 1rem;
 }
 
-.app-container {
-  max-width: 600px;
-  margin: 30px auto;
-  padding: 20px 50px;
-  font-family: Arial, sans-serif;
-  color: #333;
-  background-color: #bbdce5;
-  border-radius: 8px;
-}
-
 .card {
   display: flex;
   flex-flow: column nowrap;
   padding: 1rem;
   background-color: #fafaf8;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 4px 11px 10px 2px rgba(0, 0, 0, 0.1);
   align-content: center;
+}
+.city-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: top;
+  gap: 10px;
+  margin-bottom: 5px;
+}
+
+.city-header h4 {
+  margin: 0;
+  padding-top: 20px;
+  text-align: left;
+  font-weight: 600;
+}
+
+.city-header .weather-icon {
+  font-size: 24px;
+  color: #91adc8;
+  padding-top: 20px;
 }
 
 .city {
-  padding: 20px;
+  padding: 5px 20px;
   text-align: center;
+}
+
+.searched-city {
+  color: #5e3427;
+  margin: 0;
+  padding: 0;
 }
 
 .city h1 {
   color: #f08787;
+  padding: 5px;
+  margin-bottom: 0;
+  font-size: 48px;
+  margin-top: 0;
 }
 
-.material-symbols-outlined {
-  font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24;
-  color: #647ebc96;
+.material-icons {
+  font-size: 24px;
+  color: #647ebc50;
 }
 
 .dogs {
@@ -82,32 +142,51 @@ img {
 }
 
 .grid-details {
-  padding-top: 35px;
+  margin-top: 20px;
+  padding-top: 20px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 13px;
   font-size: 1rem;
   text-align: center;
+  border-top: #59595920 1px solid;
 }
 
 .grid-details p {
+  color: #5e3427;
   margin: 0;
   padding: 0;
 }
 
 .weather-description {
   background-color: #aed6cf5d;
-  font-size: small;
+  color: #5e3427;
+  font-size: 12px;
   padding: 3px 10px;
   margin-bottom: 20px;
+  border-radius: 5px;
 }
+
+h5 {
+  margin: 0;
+  padding: 0;
+  font-weight: 350;
+  color: #647ebcb6;
+}
+
 .icon {
   text-align: center;
 }
 
 footer {
+  color: #5959596c;
   text-align: center;
   padding: 10px;
   margin-top: 20px;
   font-size: x-small;
+}
+
+a {
+  text-decoration: none;
+  color: #f087876a;
 }
