@@ -20,12 +20,13 @@
     <div class="app-container">
       <header>
         <h6>For dog lovers and weather enthusiasts</h6>
-        <form class="search-form">
+        <form class="search-form" id="search-form">
           <input
             type="search"
             placeholder="Enter a city..."
             required
             class="search-input"
+            id="search-input"
           />
           <input type="submit" value="Search" class="search-button" />
         </form>
@@ -34,7 +35,7 @@
         <div class="card">
           <div class="city">
             <div class="city-header">
-              <h4 class="searched-city">Bogotá</h4>
+              <h4 class="searched-city" id="searched-city">Bogotá</h4>
               <h4 class="material-icons weather-icon">cloud</h4>
             </div>
             <h1>16°C</h1>
@@ -86,5 +87,6 @@
         and hosted on <a href="https://doggyweather.netlify.app">Netlify</a>.
       </footer>
     </div>
+    <script src="src/app.js"></script>
   </body>
 </html>
