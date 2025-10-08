@@ -39,11 +39,10 @@ form {
 .search-input {
   font-family: "Montserrat", sans-serif;
   background-color: #e7e7e5a9;
-
   color: #595959;
   border: none;
   border-radius: 6px;
-  width: 83%;
+  width: 82%;
   font-size: 14px;
   padding: 10px 20px;
   box-shadow: 5px 8px 18px 0px rgba(0, 0, 0, 0.1);
