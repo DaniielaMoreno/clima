@@ -20,7 +20,11 @@
   <body>
     <div class="app-container">
       <header>
-        <h6>For dog lovers and weather enthusiasts</h6>
+        <h6>
+          <span class="material-icons">pets</span> <br />
+          For dog lovers and weather enthusiasts
+        </h6>
+        <h5 class="time" id="time">Sunday 21:30</h5>
         <form class="search-form" id="search-form">
           <input
             type="search"
@@ -40,7 +44,7 @@
               <h4 class="material-icons weather-icon">cloud</h4>
             </div>
             <h1><span id="temperature">16</span><span id="units">°C</span></h1>
-            <span class="weather-description">rainy</span>
+            <span class="weather-description" id="weather-description"></span>
             <div class="grid-details">
               <div>
                 <span class="material-icons"> thermostat </span>
