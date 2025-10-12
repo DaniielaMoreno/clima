@@ -16,9 +16,11 @@ function refreshWeather(response) {
   let date = new Date(response.data.time * 1000);
   let iconElement = document.querySelector("#icon");
   let icon = changeIcon(description);
+  let dogImage = document.querySelector("#dogImage");
 
   cityElement.innerHTML = response.data.city;
   iconElement.innerHTML = icon;
+  dogImage.innerHTML = changeImage(description);
   timeElement.innerHTML = formatDate(date);
   temperatureElement.innerHTML = Math.round(temperature);
   descriptionElement.innerHTML = description;
@@ -50,22 +52,61 @@ function formatDate(date) {
 }
 
 function changeIcon(description) {
-  let icon = "wb_sunny"; //default
-
+  let icon = "cloud"; //default
+  let image =
+    "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/174/347/original/Lluvia.gif?1759348555";
   if (description.includes("rain")) {
     icon = "umbrella";
+    image =
+      "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/174/347/original/Lluvia.gif?1759348555";
   } else if (description == "snow") {
     icon = "ac_Unit";
+    image =
+      "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/174/345/original/Nieve.gif?1759348526";
   } else if (description.includes("clouds")) {
     icon = "cloud";
+    image =
+      "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/174/348/original/Nublado.gif?1759348577";
   } else if (description == "clear sky") {
     icon = "wb_sunny";
+    image =
+      "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/174/349/original/Soleado.gif?1759348591";
   } else if (description == "thunderstorm") {
     icon = "thunderstorm";
+    image =
+      "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/174/346/original/Tormenta.gif?1759348542";
+  } else if (description == "few clouds") {
+    image =
+      "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/174/344/original/ParcialmenteNublado.gif?1759348497";
   }
 
-  console.log(`Este es el que necesito ${icon}`);
   return `<span class="material-icons">${icon}</span>`;
+}
+
+function changeImage(description) {
+  let image =
+    "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/174/347/original/Lluvia.gif?1759348555";
+  if (description.includes("rain")) {
+    image =
+      "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/174/347/original/Lluvia.gif?1759348555";
+  } else if (description == "snow") {
+    image =
+      "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/174/345/original/Nieve.gif?1759348526";
+  } else if (description.includes("clouds")) {
+    image =
+      "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/174/348/original/Nublado.gif?1759348577";
+  } else if (description == "clear sky") {
+    image =
+      "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/174/349/original/Soleado.gif?1759348591";
+  } else if (description == "thunderstorm") {
+    image =
+      "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/174/346/original/Tormenta.gif?1759348542";
+  } else if (description == "few clouds") {
+    image =
+      "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/174/344/original/ParcialmenteNublado.gif?1759348497";
+  }
+
+  return `<img src=${image} alt="illustration of a dog enjoying the weather from the window"/>`;
 }
 
 function getCityInfo(city) {
