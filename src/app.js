@@ -3,6 +3,7 @@ function refreshWeather(response) {
   let temperature = response.data.temperature.current;
   let cityElement = document.querySelector("#searched-city");
   let descriptionElement = document.querySelector("#weather-description");
+  let description = response.data.condition.description;
   let feelsLikeElement = document.querySelector("#feels-like");
   let feelsLike = response.data.temperature.feels_like;
   let humidityElement = document.querySelector("#humidity");
@@ -13,16 +14,18 @@ function refreshWeather(response) {
   let pressure = response.data.temperature.pressure;
   let timeElement = document.querySelector("#time");
   let date = new Date(response.data.time * 1000);
+  let iconElement = document.querySelector("#icon");
+  let icon = changeIcon(description);
 
   cityElement.innerHTML = response.data.city;
+  iconElement.innerHTML = icon;
   timeElement.innerHTML = formatDate(date);
   temperatureElement.innerHTML = Math.round(temperature);
-  descriptionElement.innerHTML = response.data.condition.description;
+  descriptionElement.innerHTML = description;
   feelsLikeElement.innerHTML = `${Math.round(feelsLike)}°C`;
   humidityElement.innerHTML = `${humidity}%`;
   windElement.innerHTML = `${Math.round(wind)} km/h`;
   pressureElement.innerHTML = `${pressure} hPa`;
-  console.log(response.data.temperature.pressure);
 }
 
 function formatDate(date) {
@@ -44,6 +47,25 @@ function formatDate(date) {
   }
 
   return `${day}, ${hours}:${minutes}`;
+}
+
+function changeIcon(description) {
+  let icon = "wb_sunny"; //default
+
+  if (description.includes("rain")) {
+    icon = "umbrella";
+  } else if (description == "snow") {
+    icon = "ac_Unit";
+  } else if (description.includes("clouds")) {
+    icon = "cloud";
+  } else if (description == "clear sky") {
+    icon = "wb_sunny";
+  } else if (description == "thunderstorm") {
+    icon = "thunderstorm";
+  }
+
+  console.log(`Este es el que necesito ${icon}`);
+  return `<span class="material-icons">${icon}</span>`;
 }
 
 function getCityInfo(city) {
