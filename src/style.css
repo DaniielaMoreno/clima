@@ -145,6 +145,7 @@ main {
 
 img {
   max-width: 100%;
+  transition: all, 200ms, ease-in;
 }
 
 .grid-details {
