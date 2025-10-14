@@ -66,7 +66,7 @@ function changeIcon(description) {
   } else if (description.includes("clouds")) {
     icon = "cloud";
     image =
-      "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/174/775/original/Soleado.gif?1760361262";
+      "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/174/348/original/Nublado.gif?1759348577";
   } else if (description == "clear sky") {
     icon = "wb_sunny";
     image =
