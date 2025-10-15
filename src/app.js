@@ -91,7 +91,7 @@ function changeImage(description) {
     description == "broken clouds"
   ) {
     image =
-      "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/174/344/original/ParcialmenteNublado.gif?1759348497";
+      "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/174/894/original/ParcialmenteNublado.gif?1760569015";
   }
 
   return `<img src=${image} alt="illustration of a dog enjoying the weather from the window"/>`;
