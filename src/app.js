@@ -15,11 +15,11 @@ function refreshWeather(response) {
   let timeElement = document.querySelector("#time");
   let date = new Date(response.data.time * 1000);
   let iconElement = document.querySelector("#icon");
-  let icon = changeIcon(description);
+  //let icon = changeIcon(description);
   let dogImage = document.querySelector("#dogImage");
 
   cityElement.innerHTML = response.data.city;
-  iconElement.innerHTML = icon;
+  iconElement.innerHTML = changeIcon(description);
   dogImage.innerHTML = changeImage(description);
   timeElement.innerHTML = formatDate(date);
   temperatureElement.innerHTML = Math.round(temperature);
@@ -78,7 +78,7 @@ function changeImage(description) {
       "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/174/345/original/Nieve.gif?1759348526";
   } else if (description == "overcast clouds") {
     image =
-      "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/174/775/original/Soleado.gif?1760361262";
+      "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/174/348/original/Nublado.gif?1759348577";
   } else if (description == "clear sky") {
     image =
       "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/174/775/original/Soleado.gif?1760361262";
@@ -94,7 +94,7 @@ function changeImage(description) {
       "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/174/894/original/ParcialmenteNublado.gif?1760569015";
   }
 
-  return `<img src=${image} alt="illustration of a dog enjoying the weather from the window"/>`;
+  return `<img src=${image} alt="illustration of two dogs enjoying the weather from the window"/>`;
 }
 
 function getCityInfo(city) {
