@@ -15,7 +15,7 @@ function refreshWeather(response) {
   let timeElement = document.querySelector("#time");
   let date = new Date(response.data.time * 1000);
   let iconElement = document.querySelector("#icon");
-  let icon = response.data.icons;
+  let icon = response.data.icon;
   let dogImage = document.querySelector("#dogImage");
 
   cityElement.innerHTML = response.data.city;
@@ -85,7 +85,7 @@ function changeImage(description) {
   } else if (icon == "clear-sky-day") {
     image =
       "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/174/775/original/Soleado.gif?1760361262";
-  } else if (icon == "clear-sky-night.png") {
+  } else if (icon == "clear-sky-night") {
       image =
       "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/177/212/original/Noche_despejada.gif?1767825242";
   } else if (description == "thunderstorm") {
