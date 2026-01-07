@@ -76,7 +76,10 @@ function changeImage(description) {
   } else if (description == "snow") {
     image =
       "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/174/345/original/Nieve.gif?1759348526";
-  } else if (description == "overcast clouds") {
+  } else if (description == "fog") {
+      image =
+      "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/177/211/original/Niebla.gif?1767819989";
+  }  else if (description == "overcast clouds") {
     image =
       "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/174/348/original/Nublado.gif?1759348577";
   } else if (description == "clear sky") {
