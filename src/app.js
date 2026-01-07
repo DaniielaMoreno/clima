@@ -85,7 +85,7 @@ function changeImage(description) {
   } else if (icon == "clear-sky-day") {
     image =
       "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/174/775/original/Soleado.gif?1760361262";
-  } else if (icon == "clear-sky-night") {
+  } else if (icon == "clear-sky-night.png") {
       image =
       "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/177/212/original/Noche_despejada.gif?1767825242";
   } else if (description == "thunderstorm") {
