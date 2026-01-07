@@ -20,7 +20,7 @@ function refreshWeather(response) {
 
   cityElement.innerHTML = response.data.city;
   iconElement.innerHTML = changeIcon(description);
-  dogImage.innerHTML = changeImage(description);
+  dogImage.innerHTML = changeImage(icon, description);
   timeElement.innerHTML = formatDate(date);
   temperatureElement.innerHTML = Math.round(temperature);
   descriptionElement.innerHTML = description;
@@ -67,7 +67,7 @@ function changeIcon(description) {
   return `<span class="material-icons">${icon}</span>`;
 }
 
-function changeImage(description) {
+function changeImage(icon, description) {
   let image =
     "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/174/348/original/Nublado.gif?1759348577";
   if (description.includes("rain")) {
@@ -76,7 +76,7 @@ function changeImage(description) {
   } else if (description == "snow") {
     image =
       "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/174/345/original/Nieve.gif?1759348526";
-  } else if (description == "fog") {
+  } else if (description == "mist") {
       image =
       "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/177/211/original/Niebla.gif?1767819989";
   }  else if (description == "overcast clouds") {
