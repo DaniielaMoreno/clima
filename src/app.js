@@ -70,13 +70,13 @@ function changeIcon(description) {
 function changeImage(description) {
   let image =
     "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/174/348/original/Nublado.gif?1759348577";
-  if (description.includes("rain")) {
+  if (icon.includes("rain")) {
     image =
       "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/174/347/original/Lluvia.gif?1759348555";
-  } else if (description == "snow") {
+  } else if (icon.includes ("snow")) {
     image =
       "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/174/345/original/Nieve.gif?1759348526";
-  } else if (description == "fog") {
+  } else if (icon.includes ("mist")) {
       image =
       "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/177/211/original/Niebla.gif?1767819989";
   }  else if (description == "overcast clouds") {
