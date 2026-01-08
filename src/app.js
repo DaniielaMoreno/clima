@@ -15,12 +15,12 @@ function refreshWeather(response) {
 	let timeElement = document.querySelector("#time");
 	let date = new Date(response.data.time * 1000);
 	let iconElement = document.querySelector("#icon");
-	let icon = response.data.condition.icon;
+	let iconDescription = response.data.condition.icon;
 	let dogImage = document.querySelector("#dogImage");
 
 	cityElement.innerHTML = response.data.city;
 	iconElement.innerHTML = changeIcon(description);
-	dogImage.innerHTML = changeImage(icon, description);
+	dogImage.innerHTML = changeImage(iconDescription, description);
 	timeElement.innerHTML = formatDate(date);
 	temperatureElement.innerHTML = Math.round(temperature);
 	descriptionElement.innerHTML = description;
@@ -67,7 +67,7 @@ function changeIcon(description) {
 	return `<span class="material-icons">${icon}</span>`;
 }
 
-function changeImage(icon, description) {
+function changeImage(iconDescription, description) {
 	let image =
 		"https://s3.amazonaws.com/shecodesio-production/uploads/files/000/174/348/original/Nublado.gif?1759348577";
 	if (description.includes("rain")) {
@@ -79,16 +79,19 @@ function changeImage(icon, description) {
 	} else if (description == "mist") {
 		image =
 			"https://s3.amazonaws.com/shecodesio-production/uploads/files/000/177/211/original/Niebla.gif?1767819989";
-	} else if (description == "overcast clouds" && icon.includes("night")) {
+	} else if (
+		description == "overcast clouds" &&
+		iconDescription.includes("night")
+	) {
 		image =
 			"https://s3.amazonaws.com/shecodesio-production/uploads/files/000/177/216/original/Nublado_noche.gif?1767874188";
 	} else if (description == "overcast clouds") {
 		image =
 			"https://s3.amazonaws.com/shecodesio-production/uploads/files/000/174/348/original/Nublado.gif?1759348577";
-	} else if (icon == "clear-sky-day") {
+	} else if (iconDescription == "clear-sky-day") {
 		image =
 			"https://s3.amazonaws.com/shecodesio-production/uploads/files/000/174/775/original/Soleado.gif?1760361262";
-	} else if (icon == "clear-sky-night") {
+	} else if (iconDescription == "clear-sky-night") {
 		image =
 			"https://s3.amazonaws.com/shecodesio-production/uploads/files/000/177/212/original/Noche_despejada.gif?1767825242";
 	} else if (description == "thunderstorm") {
@@ -98,7 +101,7 @@ function changeImage(icon, description) {
 		(description == "few clouds" ||
 			description == "scattered clouds" ||
 			description == "broken clouds") &&
-		icon.includes("night")
+		iconDescription.includes("night")
 	) {
 		image =
 			"https://s3.amazonaws.com/shecodesio-production/uploads/files/000/177/217/original/ParcialmenteNublado_noche.gif?1767875738";
