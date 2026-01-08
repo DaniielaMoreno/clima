@@ -53,15 +53,15 @@ function formatDate(date) {
 
 function changeIcon(icon) {
   let icon = "cloud"; //default
-  if (icon.includes("rain")) {
+  if (icon.includes ("rain")) {
     icon = "umbrella";
-  } else if (icon.includes("snow")) {
+  } else if (icon.includes ("snow")) {
     icon = "ac_Unit";
-  } else if (icon.includes("clouds")) {
+  } else if (icon.includes ("clouds")) {
     icon = "cloud";
-  } else if (icon.includes("clear")) {
+  } else if (icon.includes ("clear")) {
     icon = "wb_sunny";
-  } else if (icon.includes("thunderstorm")) {
+  } else if (icon.includes ("thunderstorm")) {
     icon = "thunderstorm";
   }
   return `<span class="material-icons">${icon}</span>`;
