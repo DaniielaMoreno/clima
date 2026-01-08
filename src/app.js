@@ -19,7 +19,7 @@ function refreshWeather(response) {
   let dogImage = document.querySelector("#dogImage");
 
   cityElement.innerHTML = response.data.city;
-  iconElement.innerHTML = changeIcon(description);
+  iconElement.innerHTML = changeIcon(icon);
   dogImage.innerHTML = changeImage(icon, description);
   timeElement.innerHTML = formatDate(date);
   temperatureElement.innerHTML = Math.round(temperature);
@@ -51,17 +51,17 @@ function formatDate(date) {
   return `${day}, ${hours}:${minutes}`;
 }
 
-function changeIcon(description) {
+function changeIcon(icon) {
   let icon = "cloud"; //default
-  if (description.includes("rain")) {
+  if (icon.includes("rain")) {
     icon = "umbrella";
-  } else if (description.includes == "snow") {
+  } else if (icon.includes == "snow") {
     icon = "ac_Unit";
-  } else if (description.includes("clouds")) {
+  } else if (icon.includes("clouds")) {
     icon = "cloud";
-  } else if (description == "clear sky") {
+  } else if (icon.includes("clear")) {
     icon = "wb_sunny";
-  } else if (description == "thunderstorm") {
+  } else if (icon.includes("thunderstorm")) {
     icon = "thunderstorm";
   }
   return `<span class="material-icons">${icon}</span>`;
