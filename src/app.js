@@ -73,7 +73,7 @@ function changeImage(icon, description) {
   if (description.includes("rain")) {
     image =
       "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/174/347/original/Lluvia.gif?1759348555";
-  } else if (description == "snow") {
+  } else if (description.includes("snow")) {
     image =
       "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/174/345/original/Nieve.gif?1759348526";
   } else if (description == "mist") {
