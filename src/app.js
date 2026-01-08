@@ -18,8 +18,6 @@ function refreshWeather(response) {
 	let iconDescription = response.data.condition.icon;
 	let dogImage = document.querySelector("#dogImage");
 
-	console.log(description);
-
 	cityElement.innerHTML = response.data.city;
 	iconElement.innerHTML = changeIcon(description);
 	dogImage.innerHTML = changeImage(iconDescription, description);
@@ -72,7 +70,22 @@ function changeIcon(description) {
 function changeImage(iconDescription, description) {
 	let image =
 		"https://s3.amazonaws.com/shecodesio-production/uploads/files/000/174/348/original/Nublado.gif?1759348577";
-	if (description.includes("rain")) {
+	if (
+		description == "light rain" ||
+		(description == "drizzle" && iconDescription.includes("night"))
+	) {
+		image =
+			"https://s3.amazonaws.com/shecodesio-production/uploads/files/000/177/220/original/Drizzle_night.gif?1767882752";
+	} else if (
+		description.includes("thunderstorm") &&
+		description.includes("rain")
+	) {
+		image =
+			"https://s3.amazonaws.com/shecodesio-production/uploads/files/000/177/221/original/Tormenta.gif?1767884592";
+	} else if (description == "light rain" || description == "drizzle") {
+		image =
+			"https://s3.amazonaws.com/shecodesio-production/uploads/files/000/177/218/original/Drizzle.gif?1767881112";
+	} else if (description.includes("rain")) {
 		image =
 			"https://s3.amazonaws.com/shecodesio-production/uploads/files/000/174/347/original/Lluvia.gif?1759348555";
 	} else if (description.includes("snow")) {
@@ -96,9 +109,6 @@ function changeImage(iconDescription, description) {
 	} else if (iconDescription == "clear-sky-night") {
 		image =
 			"https://s3.amazonaws.com/shecodesio-production/uploads/files/000/177/212/original/Noche_despejada.gif?1767825242";
-	} else if (description == "thunderstorm") {
-		image =
-			"https://s3.amazonaws.com/shecodesio-production/uploads/files/000/174/346/original/Tormenta.gif?1759348542";
 	} else if (
 		(description == "few clouds" ||
 			description == "scattered clouds" ||
