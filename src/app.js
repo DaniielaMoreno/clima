@@ -19,7 +19,7 @@ function refreshWeather(response) {
   let dogImage = document.querySelector("#dogImage");
 
   cityElement.innerHTML = response.data.city;
-  iconElement.innerHTML = changeIcon(icon);
+  iconElement.innerHTML = changeIcon(description);
   dogImage.innerHTML = changeImage(icon, description);
   timeElement.innerHTML = formatDate(date);
   temperatureElement.innerHTML = Math.round(temperature);
@@ -51,17 +51,17 @@ function formatDate(date) {
   return `${day}, ${hours}:${minutes}`;
 }
 
-function changeIcon(icon) {
+function changeIcon(description) {
   let icon = "cloud"; //default
-  if (icon.includes ("rain")) {
+  if (description.includes("rain")) {
     icon = "umbrella";
-  } else if (icon.includes ("snow")) {
+  } else if (description == "snow") {
     icon = "ac_Unit";
-  } else if (icon.includes ("clouds")) {
+  } else if (description.includes("clouds")) {
     icon = "cloud";
-  } else if (icon.includes ("clear")) {
+  } else if (description == "clear sky") {
     icon = "wb_sunny";
-  } else if (icon.includes ("thunderstorm")) {
+  } else if (description == "thunderstorm") {
     icon = "thunderstorm";
   }
   return `<span class="material-icons">${icon}</span>`;
@@ -73,7 +73,7 @@ function changeImage(icon, description) {
   if (description.includes("rain")) {
     image =
       "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/174/347/original/Lluvia.gif?1759348555";
-  } else if (icon.includes("snow")) {
+  } else if (description.includes("snow") {
     image =
       "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/174/345/original/Nieve.gif?1759348526";
   } else if (description == "mist") {
