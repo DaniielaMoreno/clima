@@ -94,7 +94,12 @@ function changeImage(icon, description) {
   } else if (description == "thunderstorm") {
     image =
       "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/174/346/original/Tormenta.gif?1759348542";
-  } else if (
+  } else if ((description == "few clouds" ||
+             description == "scattered clouds" ||
+             description == "broken clouds") && icon.includes ("night")) {
+      image =
+               "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/177/217/original/ParcialmenteNublado_noche.gif?1767875738";
+ } else if (
     description == "few clouds" ||
     description == "scattered clouds" ||
     description == "broken clouds"
