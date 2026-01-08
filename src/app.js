@@ -64,7 +64,7 @@ function changeIcon(description) {
 	} else if (description == "thunderstorm") {
 		icon = "thunderstorm";
 	}
-	return `<span class="material-icons">${icon}</span>`;
+	return `<span class="material-icons-outlined">${icon}</span>`;
 }
 
 function changeImage(iconDescription, description) {
