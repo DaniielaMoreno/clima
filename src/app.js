@@ -52,10 +52,10 @@ function formatDate(date) {
 }
 
 function changeIcon(description) {
-	let icon = "ac_unit"; //default
+	let icon = "cloud"; //default
 	if (description.includes("rain")) {
 		icon = "umbrella";
-	} else if (description.includes("snow")) {
+	} else if (description == "light snow") {
 		icon = "severe-cold";
 	} else if (description.includes("clouds")) {
 		icon = "cloud";
