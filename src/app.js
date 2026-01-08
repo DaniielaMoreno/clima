@@ -19,7 +19,7 @@ function refreshWeather(response) {
 	let dogImage = document.querySelector("#dogImage");
 
 	cityElement.innerHTML = response.data.city;
-	iconElement.innerHTML = changeIcon(description);
+	iconElement.innerHTML = changeIcon(iconDescription, description);
 	dogImage.innerHTML = changeImage(iconDescription, description);
 	timeElement.innerHTML = formatDate(date);
 	temperatureElement.innerHTML = Math.round(temperature);
@@ -51,7 +51,7 @@ function formatDate(date) {
 	return `${day}, ${hours}:${minutes}`;
 }
 
-function changeIcon(description) {
+function changeIcon(iconDescription, description) {
 	let icon = "cloud"; //default
 	if (description.includes("rain")) {
 		icon = "umbrella";
@@ -59,7 +59,9 @@ function changeIcon(description) {
 		icon = "ac_unit";
 	} else if (description.includes("clouds")) {
 		icon = "cloud";
-	} else if (description == "clear sky") {
+	} else if (iconDescription == "clear-sky-night") {
+		icon = "bedtime";
+	} else if (iconDescription == "clear-sky-day") {
 		icon = "wb_sunny";
 	} else if (description == "thunderstorm") {
 		icon = "thunderstorm";
@@ -72,10 +74,17 @@ function changeImage(iconDescription, description) {
 		"https://s3.amazonaws.com/shecodesio-production/uploads/files/000/174/348/original/Nublado.gif?1759348577";
 	if (
 		description == "light rain" ||
-		(description == "drizzle" && iconDescription.includes("night"))
+		(description.includes("drizzle") && iconDescription.includes("night"))
 	) {
 		image =
 			"https://s3.amazonaws.com/shecodesio-production/uploads/files/000/177/220/original/Drizzle_night.gif?1767882752";
+	} else if (
+		description.includes("thunderstorm") &&
+		description.includes("rain") &&
+		iconDescription.includes("night")
+	) {
+		image =
+			"https://s3.amazonaws.com/shecodesio-production/uploads/files/000/177/222/original/Tormenta_noche.gif?1767888519";
 	} else if (
 		description.includes("thunderstorm") &&
 		description.includes("rain")
@@ -85,13 +94,31 @@ function changeImage(iconDescription, description) {
 	} else if (description == "light rain" || description == "drizzle") {
 		image =
 			"https://s3.amazonaws.com/shecodesio-production/uploads/files/000/177/218/original/Drizzle.gif?1767881112";
+	} else if (
+		description.includes("rain") &&
+		iconDescription.includes("night")
+	) {
+		image =
+			"https://s3.amazonaws.com/shecodesio-production/uploads/files/000/177/240/original/Lluvia_noche.gif?1767906594";
 	} else if (description.includes("rain")) {
 		image =
 			"https://s3.amazonaws.com/shecodesio-production/uploads/files/000/174/347/original/Lluvia.gif?1759348555";
+	} else if (
+		description.includes("snow") &&
+		iconDescription.includes("night")
+	) {
+		image =
+			"https://s3.amazonaws.com/shecodesio-production/uploads/files/000/177/242/original/Nieve_noche.gif?1767908311";
 	} else if (description.includes("snow")) {
 		image =
 			"https://s3.amazonaws.com/shecodesio-production/uploads/files/000/174/345/original/Nieve.gif?1759348526";
-	} else if (description == "mist") {
+	} else if (
+		description == "mist" ||
+		(description == "fog" && iconDescription.includes("night"))
+	) {
+		image =
+			"https://s3.amazonaws.com/shecodesio-production/uploads/files/000/177/238/original/Niebla_noche.gif?1767904819";
+	} else if (description == "mist" || description == "fog") {
 		image =
 			"https://s3.amazonaws.com/shecodesio-production/uploads/files/000/177/211/original/Niebla.gif?1767819989";
 	} else if (
