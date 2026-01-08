@@ -18,6 +18,8 @@ function refreshWeather(response) {
 	let iconDescription = response.data.condition.icon;
 	let dogImage = document.querySelector("#dogImage");
 
+	console.log(description);
+
 	cityElement.innerHTML = response.data.city;
 	iconElement.innerHTML = changeIcon(description);
 	dogImage.innerHTML = changeImage(iconDescription, description);
@@ -55,12 +57,12 @@ function changeIcon(description) {
 	let icon = "cloud"; //default
 	if (description.includes("rain")) {
 		icon = "umbrella";
-	} else if (description == "light snow") {
+	} else if (description.includes("snow")) {
 		icon = "ac_unit";
 	} else if (description.includes("clouds")) {
 		icon = "cloud";
 	} else if (description == "clear sky") {
-		icon = "ac_unit";
+		icon = "wb_sunny";
 	} else if (description == "thunderstorm") {
 		icon = "thunderstorm";
 	}
