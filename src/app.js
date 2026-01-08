@@ -56,7 +56,7 @@ function changeIcon(description) {
 	if (description.includes("rain")) {
 		icon = "umbrella";
 	} else if (description.includes("snow")) {
-		icon = "ac_unit";
+		icon = "severe-cold";
 	} else if (description.includes("clouds")) {
 		icon = "cloud";
 	} else if (description == "clear sky") {
@@ -64,7 +64,7 @@ function changeIcon(description) {
 	} else if (description == "thunderstorm") {
 		icon = "thunderstorm";
 	}
-	return `<span class="material-icons-outlined">${icon}</span>`;
+	return `<span class="material-icons">${icon}</span>`;
 }
 
 function changeImage(iconDescription, description) {
