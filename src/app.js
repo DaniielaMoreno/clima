@@ -55,7 +55,7 @@ function changeIcon(icon) {
   let icon = "cloud"; //default
   if (icon.includes("rain")) {
     icon = "umbrella";
-  } else if (icon.includes == "snow") {
+  } else if (icon.includes("snow")) {
     icon = "ac_Unit";
   } else if (icon.includes("clouds")) {
     icon = "cloud";
