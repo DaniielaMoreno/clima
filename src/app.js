@@ -60,7 +60,7 @@ function changeIcon(description) {
 	} else if (description.includes("clouds")) {
 		icon = "cloud";
 	} else if (description == "clear sky") {
-		icon = "wb_sunny";
+		icon = "ac_unit";
 	} else if (description == "thunderstorm") {
 		icon = "thunderstorm";
 	}
