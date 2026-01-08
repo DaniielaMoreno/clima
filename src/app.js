@@ -143,7 +143,7 @@ function changeImage(iconDescription, description) {
 		iconDescription.includes("night")
 	) {
 		image =
-			"https://s3.amazonaws.com/shecodesio-production/uploads/files/000/177/217/original/ParcialmenteNublado_noche.gif?1767875738";
+			"https://s3.amazonaws.com/shecodesio-production/uploads/files/000/177/243/original/ParcialmenteNublado_noche.gif?1767911027";
 	} else if (
 		description == "few clouds" ||
 		description == "scattered clouds" ||
