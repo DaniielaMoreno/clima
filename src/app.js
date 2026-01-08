@@ -79,7 +79,10 @@ function changeImage(icon, description) {
   } else if (description == "mist") {
       image =
       "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/177/211/original/Niebla.gif?1767819989";
-  }  else if (description == "overcast clouds") {
+  } else if (description == "overcast clouds" && icon.includes("night")) {
+      image =
+        "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/177/216/original/Nublado_noche.gif?1767874188";
+  } else if (description == "overcast clouds") {
     image =
       "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/174/348/original/Nublado.gif?1759348577";
   } else if (icon == "clear-sky-day") {
