@@ -28,6 +28,8 @@ function refreshWeather(response) {
 	humidityElement.innerHTML = `${humidity}%`;
 	windElement.innerHTML = `${Math.round(wind)} km/h`;
 	pressureElement.innerHTML = `${pressure} hPa`;
+
+	getForecast(response.data.city);
 }
 
 function formatDate(date) {
@@ -113,7 +115,7 @@ function changeImage(iconDescription, description) {
 		image =
 			"https://s3.amazonaws.com/shecodesio-production/uploads/files/000/174/345/original/Nieve.gif?1759348526";
 	} else if (
-		description == "mist" ||
+		(description == "mist" && iconDescription.includes("night")) ||
 		(description == "fog" && iconDescription.includes("night"))
 	) {
 		image =
@@ -166,6 +168,32 @@ function searchForCity(event) {
 	event.preventDefault();
 	let searchInput = document.querySelector("#search-input");
 	getCityInfo(searchInput.value);
+}
+
+function getForecast(city) {
+	let apiKey = "97fab40oeb1c82af2b7390d7e00fac2t";
+	let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}`;
+	axios.get(apiUrl).then(displayForecast);
+}
+
+function displayForecast(response) {
+	let days = ["Mon", "Tue", "Wed", "Thu", "Fri"];
+	let forecastHtml = "";
+
+	days.forEach(function (day) {
+		forecastHtml += `<div class="weather-forecast-day">
+		<div class="weather-forecast-date">${day}</div>
+		<div class="weather-forecast-icon">⛅️</div>
+		<div class="weather-forecast-temperatures">
+			<div class="weather-forecast-temp">
+				<strong>19°</strong>
+			</div>
+			<div class="weather-forecast-temp">8°</div>
+		</div>
+	</div>`;
+	});
+	let forecastElement = document.querySelector("#forecast");
+	forecastElement.innerHTML = forecastHtml;
 }
 
 let searchFormElement = document.querySelector("#search-form");

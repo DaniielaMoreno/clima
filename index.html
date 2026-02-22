@@ -1,92 +1,92 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Doggy weather app</title>
-    <link rel="stylesheet" href="src/style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
-    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
-  </head>
-  <body>
-    <div class="app-container">
-      <header>
-        <h6>
-          <span class="material-icons">pets</span> <br />
-          For dog lovers and weather enthusiasts
-        </h6>
-        <h5 class="time" id="time"></h5>
-        <form class="search-form" id="search-form">
-          <input
-            type="search"
-            placeholder="Enter a city..."
-            required
-            class="search-input"
-            id="search-input"
-          />
-          <input type="submit" value="search" class="search-button" />
-        </form>
-      </header>
-      <main>
-        <div class="card">
-          <div class="city">
-            <div class="city-header">
-              <h4 class="searched-city" id="searched-city">Bogotá</h4>
-              <h4 class="weather-icon" id="icon"></h4>
-            </div>
-            <h1><span id="temperature">16</span><span id="units">°C</span></h1>
-            <span class="weather-description" id="weather-description"></span>
-            <div class="grid-details">
-              <div>
-                <span class="material-icons"> thermostat </span>
-                <h5>Feels like</h5>
-                <p id="feels-like">20°C</p>
-              </div>
-              <div>
-                <span class="material-icons">water_drop</span>
-                <h5>Humidity</h5>
-                <p id="humidity">60%</p>
-              </div>
-              <div>
-                <span class="material-icons"> air </span>
-                <h5>Wind</h5>
-                <p id="wind">3 km/h</p>
-              </div>
-              <div>
-                <span class="material-icons"> speed</span>
-                <h5>Pressure</h5>
-                <p id="pressure">1013 hPa</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="dogs" id="dogImage"></div>
-        </div>
-      </main>
-
-      <footer>
-        Coded and illustrated by
-        <a href="https://github.com/DaniielaMoreno" target="_blank"
-          >Daniela Moreno</a
-        >
-        <br />
-        This project is open sourced on
-        <a href="https://github.com/DaniielaMoreno/clima" target="_blank"
-          >GitHub</a
-        >
-        and hosted on <a href="https://doggyweather.netlify.app">Netlify</a>.
-      </footer>
-    </div>
-    <script src="src/app.js"></script>
-  </body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Doggy weather app</title>
+		<link rel="stylesheet" href="src/style.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/icon?family=Material+Icons"
+			rel="stylesheet"
+		/>
+		<script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+	</head>
+	<body>
+		<div class="app-container">
+			<header>
+				<h6>
+					<span class="material-icons">pets</span> <br />
+					For dog lovers and weather enthusiasts
+				</h6>
+				<h5 class="time" id="time"></h5>
+				<form class="search-form" id="search-form">
+					<input
+						type="search"
+						placeholder="Enter a city..."
+						required
+						class="search-input"
+						id="search-input"
+					/>
+					<input type="submit" value="search" class="search-button" />
+				</form>
+			</header>
+			<main>
+				<div class="card">
+					<div class="city">
+						<div class="city-header">
+							<h4 class="searched-city" id="searched-city">Bogotá</h4>
+							<h4 class="weather-icon" id="icon"></h4>
+						</div>
+						<h1><span id="temperature">16</span><span id="units">°C</span></h1>
+						<span class="weather-description" id="weather-description"></span>
+						<div class="grid-details">
+							<div>
+								<span class="material-icons"> thermostat </span>
+								<h5>Feels like</h5>
+								<p id="feels-like">20°C</p>
+							</div>
+							<div>
+								<span class="material-icons">water_drop</span>
+								<h5>Humidity</h5>
+								<p id="humidity">60%</p>
+							</div>
+							<div>
+								<span class="material-icons"> air </span>
+								<h5>Wind</h5>
+								<p id="wind">3 km/h</p>
+							</div>
+							<div>
+								<span class="material-icons"> speed</span>
+								<h5>Pressure</h5>
+								<p id="pressure">1013 hPa</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="card">
+					<div class="dogs" id="dogImage"></div>
+				</div>
+			</main>
+			<div class="weather-forecast" id="forecast"></div>
+			<footer>
+				Coded and illustrated by
+				<a href="https://github.com/DaniielaMoreno" target="_blank"
+					>Daniela Moreno</a
+				>
+				<br />
+				This project is open sourced on
+				<a href="https://github.com/DaniielaMoreno/clima" target="_blank"
+					>GitHub</a
+				>
+				and hosted on <a href="https://doggyweather.netlify.app">Netlify</a>.
+			</footer>
+		</div>
+		<script src="src/app.js"></script>
+	</body>
 </html>
