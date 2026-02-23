@@ -75,7 +75,7 @@ function changeImage(iconDescription, description) {
 	let image =
 		"https://s3.amazonaws.com/shecodesio-production/uploads/files/000/174/348/original/Nublado.gif?1759348577";
 	if (
-		description == "light rain" ||
+		(description == "light rain" && iconDescription.includes("night")) ||
 		(description.includes("drizzle") && iconDescription.includes("night"))
 	) {
 		image =
