@@ -205,21 +205,24 @@ h5 {
 }
 
 .weather-forecast-icon {
-	font-size: 38px;
-	text-align: center;
+	width: 60px;
+	height: 60px;
+	display: block;
+	margin: 0 auto;
+	filter: grayscale(0.7) hue-rotate(200deg) brightness(0.5);
 	margin-bottom: 7px;
 }
 
 .weather-forecast-temperatures {
 	text-align: center;
 	font-size: medium;
-	color: #373654aa;
+	color: #373654cc;
 	display: flex;
 	justify-content: center;
 }
 
 .weather-forecast-temp {
-	padding: 0 3px;
+	padding: 0 4px;
 }
 
 footer {
