@@ -189,12 +189,16 @@ h5 {
 .weather-forecast {
 	font-family: "Montserrat", sans-serif;
 	margin-top: 16px;
-	padding: 1rem 2rem;
+	padding: 1rem 1.5rem;
 	background-color: #fafaf8;
 	border-radius: 8px;
 	display: flex;
 	justify-content: space-between;
 	box-shadow: 4px 11px 10px 2px rgba(0, 0, 0, 0.1);
+}
+
+.weather-forecast-day {
+	max-width: 80%;
 }
 
 .weather-forecast-date {
